@@ -22,7 +22,7 @@ This is a **Wallet Web Application** that allows users to sign up, verify their 
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/narutobhati/Youtube-downloading-Extension.git
+   git clone https://github.com/narutobhati/Monee.git
    cd Monee
 
 2. **Install Dependencies:**
