@@ -1,81 +1,58 @@
-# Turborepo starter
+# **Monee Wallet App**
 
-This is an official starter Turborepo.
+This is a **Wallet Web Application** that allows users to sign up, verify their identity via OTP, and simulate basic banking transactions and peer to peer. It also integrates a dummy banking API for on-ramp transactions.
 
-## Using this example
+---
 
-Run the following command:
+## **Features**
 
-```sh
-npx create-turbo@latest
-```
+- **User Registration and Login**: Secure signup and login with validation.
+- **OTP Verification**: Authenticate transactions and actions with OTP verification.
+- **Dummy Bank API Integration**: Supports a mock HDFC and Axis Bank interface with features like NetBanking and transaction loaders.
+- **Wallet Transactions**: Simulate peer-to-peer transactions and balance management.
+- **Responsive UI**: User interface inspired by real banking sites for an immersive experience.
 
-## What's inside?
+---
 
-This Turborepo includes the following packages/apps:
 
-### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+---
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+## **Installation and Setup**
 
-### Utilities
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/narutobhati/Youtube-downloading-Extension.git
+   cd Monee
 
-This Turborepo has some additional tools already setup for you:
+2. **Install Dependencies:**
+    ```bash
+    npm install
+3. **Environment Variables:** 
+    
+    ***create a .env file in packages/db:***
+    ```bash
+    DATABASE_URL=your_postgresql_url
+***create a .env file in apps/user-app:***
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+    JWT_SECRET=mysecret
+    NEXTAUTH_URL=http://localhost:3001
+    Bank_URL="http://localhost:3002"
+4. **Migrate the database:**
+    ```bash
+    cd packages\db
+    npx prisma migrate dev
+    npx prisma generate
+    npx prisma db seed
+5. **Run the Application:**
+    ```bash
+    npm run dev
+***Your application will be available at http://localhost:3001***
 
-### Build
+---
+## **License**
+This project is licensed under the **MIT License.**
 
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+---
+## **Author**
+Developed by **Naruto Bhati** 
