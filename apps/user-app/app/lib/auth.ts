@@ -32,27 +32,33 @@ export const authOptions = {
                 return null;
             }
 
-            try {
-                const user = await db.user.create({
-                    data: {
-                        number: credentials.phone,
-                        password: hashedPassword
-                    }
-                });
+            // try {
+            //     const user = await db.user.create({
+            //         data: {
+            //             number: credentials.phone,
+            //             password: hashedPassword
+            //         }
+            //     });
             
-                return {
-                    id: user.id.toString(),
-                    name: user.name,
-                    email: user.number
-                }
-            } catch(e) {
-                console.error(e);
-            }
+            //     return {
+            //         id: user.id.toString(),
+            //         name: user.name,
+            //         email: user.number
+            //     }
+            // } catch(e) {
+            //     console.log("signup error")
+            //     console.error(e);
+            // }
 
             return null
           },
         })
     ],
+    pages: {
+        signIn: '/auth/signin',  // custom signin page
+        signOut: '/auth/signout',
+        error: '/auth/error',
+      },
     secret: process.env.JWT_SECRET || "secret",
     callbacks: {
         // TODO: can u fix the type here? Using any is bad
